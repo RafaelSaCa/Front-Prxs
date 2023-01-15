@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { PacientesComponent } from './pacientes/pacientes.component';
+
+const routes: Routes = [
+  { path: '', component: PacientesComponent }// chama o PacientesComponent quanto o caminho da url for vazio (home)
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
