@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PacientesComponent } from './pacientes/pacientes.component';
 
 const routes: Routes = [
-  { path: '', component: PacientesComponent }// chama o PacientesComponent quanto o caminho da url for vazio (home)
+  { path: '', component: PacientesComponent }// chama o PacientesComponent quando o caminho da url for vazio (home)
 ];
 
 @NgModule({
