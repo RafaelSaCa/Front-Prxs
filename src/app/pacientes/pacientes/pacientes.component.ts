@@ -1,5 +1,8 @@
-import { Paciente } from './../model/paciente';
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Paciente } from './../model/paciente';
+import { PacientesService } from './../services/pacientes.service';
 
 @Component({
   selector: 'app-pacientes',
@@ -8,19 +11,11 @@ import { Component } from '@angular/core';
 })
 export class PacientesComponent {
 
-  pacientes: Paciente[] = [
-    { _id: '1',
-      nome: 'Rafael SaCa',
-      cpf: '430.817.428-70',
-      telefone: '18-99642-9730',
-      endereco: 'Rua Monsenhor José Carlos Dangelo -1086'},
-      { _id: '2',
-      nome: 'Meire SaCa',
-      cpf: '430.817.418-07',
-      telefone: '18-99781-3133',
-      endereco: 'Rua Monsenhor José Carlos Dangelo -1086'},
-  ];
+  pacientes: Observable<Paciente[]>;
   displayedColumns = [ 'nome','cpf','telefone','endereco'];
 
+  constructor(private pacienteService: PacientesService){
+    this.pacientes = this.pacienteService.list();
+  }
 
 }
