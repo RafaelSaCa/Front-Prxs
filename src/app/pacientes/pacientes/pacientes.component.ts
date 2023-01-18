@@ -14,7 +14,7 @@ import { PacientesService } from './../services/pacientes.service';
 export class PacientesComponent {
 
   pacientes$: Observable<Paciente[]>;
-  displayedColumns = [ 'nome','cpf','telefone','endereco'];
+  displayedColumns = [ '_id','nome','cpf','telefone','endereco'];
 
   constructor(private pacienteService: PacientesService, public dialog: MatDialog){
     this.pacientes$ = this.pacienteService.list()
