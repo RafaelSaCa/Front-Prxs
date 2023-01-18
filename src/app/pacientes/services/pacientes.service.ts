@@ -8,7 +8,7 @@ import { Paciente } from './../model/paciente';
   providedIn: 'root',
 })
 export class PacientesService {
-  private readonly API = '/assets/pacientes.json';
+  private readonly API = '/assets/apacientes.json';
 
   constructor(private httpClient: HttpClient) {}
 
