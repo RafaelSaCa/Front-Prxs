@@ -37,6 +37,34 @@
               </td>
             </ng-container>
 
+            <!--Botões de Ação-->
+            <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef>
+                <button (click)="onAdd()"
+                  mat-mini-fab
+                  color="accent"
+                  aria-label="Adicionar Paciente">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </mat-header-cell>
+
+              <mat-cell *matCellDef="let paciente">
+                <button
+                 mat-icon-button
+                color="primary"
+                aria-label="Editar Paciente">
+                <mat-icon>edit</mat-icon>
+                </button>
+
+                <button
+                mat-icon-button
+               color="primary"
+               aria-label="Remover Paciente">
+               <mat-icon>delete</mat-icon>
+               </button>
+              </mat-cell>
+            </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
           </table>
