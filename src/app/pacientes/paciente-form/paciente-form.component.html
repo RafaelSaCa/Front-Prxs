@@ -10,40 +10,26 @@
           <mat-form-field class="full-width">
             <input matInput placeholder="Nome" formControlName="nome" />
           </mat-form-field>
-        </mat-card-content>
-      </mat-card>
 
-      <mat-card>
-        <mat-card-content>
           <mat-form-field class="full-width">
             <input matInput placeholder="Cpf" formControlName="cpf" />
           </mat-form-field>
-        </mat-card-content>
-      </mat-card>
 
-      <mat-card>
-        <mat-card-content>
           <mat-form-field class="full-width">
             <input matInput placeholder="Telefone" formControlName="telefone" />
           </mat-form-field>
-        </mat-card-content>
-      </mat-card>
 
-      <mat-card>
-        <mat-card-content>
           <mat-form-field class="full-width">
             <input matInput placeholder="Endreço" formControlName="endereco" />
           </mat-form-field>
+
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+            <button mat-raised-button (click)="(onCancel())">Cancel</button>
+          </mat-card-actions>
         </mat-card-content>
+
       </mat-card>
     </form>
-
-    <section>
-       <div class="example-button-row">
-        <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
-        <button mat-raised-button (click)="onCancel">Cancel</button>
-      </div>
-    </section>
-
   </mat-card-content>
 </mat-card>

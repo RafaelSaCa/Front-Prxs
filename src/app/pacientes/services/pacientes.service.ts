@@ -19,4 +19,8 @@ export class PacientesService {
       tap((pacientes) => console.log(pacientes))
     );
   }
+
+  save(record: Paciente){
+    return this.httpClient.post<Paciente>(this.API, record);
+  }
 }
