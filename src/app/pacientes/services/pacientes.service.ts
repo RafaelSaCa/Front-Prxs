@@ -20,7 +20,7 @@ export class PacientesService {
     );
   }
 
-  save(record: Paciente){
+  save(record: Partial<Paciente>){//Partial permite passar atributos parciais do objeto. ex: nome, cpf, sem os demais atributos.
     return this.httpClient.post<Paciente>(this.API, record);
   }
 }
