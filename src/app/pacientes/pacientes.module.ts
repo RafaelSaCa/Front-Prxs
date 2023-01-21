@@ -4,10 +4,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from './../shared/app-material/app-material.module';
 import { SharedModule } from './../shared/shared.module';
-import { PacienteFormComponent } from './paciente-form/paciente-form.component';
+import { PacienteFormComponent } from './containers/paciente-form/paciente-form.component';
 import { PacientesRoutingModule } from './pacientes-routing.module';
-import { PacientesComponent } from './pacientes/pacientes.component';
-import { PacienteListComponent } from './paciente-list/paciente-list.component';
+import { PacientesComponent } from './containers/pacientes/pacientes.component';
+import { PacienteListComponent } from './components/paciente-list/paciente-list.component';
 
 
 @NgModule({

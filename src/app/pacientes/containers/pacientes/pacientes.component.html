@@ -6,7 +6,9 @@
     <div class="column-flex mat-elevation-z8">
     <app-paciente-list
       *ngIf="pacientes$ | async as pacientes; else loading"
-      [pacientes]="pacientes"></app-paciente-list>
+      [pacientes]="pacientes"
+      (add)="onAdd()"
+      ></app-paciente-list>
 
     <ng-template #loading>
       <div class="loading-spinner">

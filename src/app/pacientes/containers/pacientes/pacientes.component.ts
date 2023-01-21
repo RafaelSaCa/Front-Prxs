@@ -1,10 +1,10 @@
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
+import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { catchError, Observable, of } from 'rxjs';
 
-import { Paciente } from './../model/paciente';
-import { PacientesService } from './../services/pacientes.service';
+import { Paciente } from '../../model/paciente';
+import { PacientesService } from '../../services/pacientes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
