@@ -44,7 +44,7 @@
         </mat-header-cell>
 
         <mat-cell *matCellDef="let paciente" class="action-column">
-          <button mat-icon-button color="primary" aria-label="Editar Paciente">
+          <button (click)="onEdit(paciente)" mat-icon-button color="primary" aria-label="Editar Paciente">
             <mat-icon>edit</mat-icon>
           </button>
 

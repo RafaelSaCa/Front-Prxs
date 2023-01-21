@@ -15,11 +15,14 @@ export class PacientesService {
   list() {
     return this.httpClient.get<Paciente[]>(this.API).pipe(
       first(),
-      delay(1500),
+     // delay(1500),
       tap((pacientes) => console.log(pacientes))
     );
   }
 
+  loadFormById(id: string){
+   return this.httpClient.get<Paciente>(`${this.API}/${id}`);
+  }
   save(record: Partial<Paciente>){//Partial permite passar atributos parciais do objeto. ex: nome, cpf, sem os demais atributos.
     return this.httpClient.post<Paciente>(this.API, record);
   }

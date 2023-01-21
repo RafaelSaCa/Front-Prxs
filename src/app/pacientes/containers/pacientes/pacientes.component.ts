@@ -39,4 +39,8 @@ export class PacientesComponent {
    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
+  onEdit(paciente: Paciente){
+    this.router.navigate(['edit',paciente._id], {relativeTo: this.route});
+  }
+
 }
