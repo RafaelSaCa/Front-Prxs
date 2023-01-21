@@ -1,0 +1,61 @@
+<mat-card>
+  <mat-card-content>
+    <mat-table [dataSource]="pacientes" class="mat-elevation-z8">
+      <ng-container matColumnDef="_id">
+        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente._id }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="nome">
+        <mat-header-cell  *matHeaderCellDef>Nome</mat-header-cell>
+        <mat-cell  *matCellDef="let paciente">{{ paciente.nome }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="cpf">
+        <mat-header-cell *matHeaderCellDef>Cpf</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.cpf }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="telefone">
+        <mat-header-cell *matHeaderCellDef>Telefone</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">
+          {{ paciente.telefone }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="endereco">
+        <mat-header-cell *matHeaderCellDef>Endereço</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">
+          {{ paciente.endereco }}
+        </mat-cell>
+      </ng-container>
+
+      <!--Botões de Ação-->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef class="action-column-header">
+          <button
+            (click)="onAdd()"
+            mat-mini-fab
+            color="accent"
+            aria-label="Adicionar Paciente"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let paciente" class="action-column">
+          <button mat-icon-button color="primary" aria-label="Editar Paciente">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button color="warn" aria-label="Remover Paciente">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>

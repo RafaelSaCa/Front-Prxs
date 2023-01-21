@@ -7,12 +7,14 @@ import { SharedModule } from './../shared/shared.module';
 import { PacienteFormComponent } from './paciente-form/paciente-form.component';
 import { PacientesRoutingModule } from './pacientes-routing.module';
 import { PacientesComponent } from './pacientes/pacientes.component';
+import { PacienteListComponent } from './paciente-list/paciente-list.component';
 
 
 @NgModule({
   declarations: [
     PacientesComponent,
-    PacienteFormComponent
+    PacienteFormComponent,
+    PacienteListComponent
   ],
   imports: [
     CommonModule,

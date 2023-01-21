@@ -14,7 +14,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PacientesComponent {
   pacientes$: Observable<Paciente[]>;
-  displayedColumns = ['_id', 'nome', 'cpf', 'telefone', 'endereco', 'actions'];
 
   constructor(
     private pacienteService: PacientesService,
