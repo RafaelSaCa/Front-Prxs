@@ -16,7 +16,7 @@ export class PacienteResolver implements Resolve<Paciente> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Paciente> {
     if(route.params && route.params['id']){//se exite parametro e existe o parametro id
-      this.service.loadFormById(route.params['id']);
+      return this.service.loadFormById(route.params['id']);
     }
 
     return of({_id:'', nome: '', cpf:'', telefone:'', endereco:''});
