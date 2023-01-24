@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 
-import { Paciente } from '../../model/paciente';
+import { Paciente } from './../../model/paciente';
+
 
 @Component({
   selector: 'app-paciente-list',
@@ -13,6 +13,7 @@ export class PacienteListComponent {
   @Input() pacientes: Paciente[] = [];
   @Output() add = new EventEmitter(false);
   @Output() edit = new EventEmitter(false);
+  @Output() delete = new EventEmitter(false);
 
   readonly displayedColumns = ['_id', 'nome', 'cpf', 'telefone', 'endereco', 'actions'];
 
@@ -22,7 +23,11 @@ export class PacienteListComponent {
     this.add.emit(true);
   }
 
-  onEdit(paciente : Paciente){
+  onEdit(paciente: Paciente){
     this.edit.emit(paciente);
+  }
+
+  onDelete(paciente: Paciente){
+    this.delete.emit(paciente);
   }
 }

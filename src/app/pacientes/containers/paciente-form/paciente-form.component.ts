@@ -19,7 +19,7 @@ export class PacienteFormComponent {
     nome: [''],
     cpf: [''],
     telefone: [''],
-    endereco: [''],
+    endereco: ['']
   });
 
   constructor(

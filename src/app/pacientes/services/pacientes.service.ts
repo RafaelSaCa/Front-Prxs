@@ -38,4 +38,8 @@ export class PacientesService {
   private update(record: Partial<Paciente>) {
     return this.httpClient.put<Paciente>(`${this.API}/${record._id}`, record);
   }
+
+  delete(id: string) {
+    return this.httpClient.delete(`${this.API}/${id}`);
+  }
 }

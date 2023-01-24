@@ -19,6 +19,6 @@ export class PacienteResolver implements Resolve<Paciente> {
       return this.service.loadFormById(route.params['id']);
     }
 
-    return of({_id:'', nome: '', cpf:'', telefone:'', endereco:''});
+    return of({_id:'', nome:'', cpf:'', telefone:'', endereco:'' });
   }
 }
