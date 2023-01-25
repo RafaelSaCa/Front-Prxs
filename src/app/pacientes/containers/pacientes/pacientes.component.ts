@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
+import { ConfirmationDialogComponent } from "src/app/shared/components/confirmation-dialog/ConfirmationDialogComponent";
 
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { Paciente } from '../../model/paciente';
@@ -14,7 +15,7 @@ import { PacientesService } from '../../services/pacientes.service';
   styleUrls: ['./pacientes.component.scss'],
 })
 export class PacientesComponent {
-  pacientes$: Observable<Paciente[]> | null =  null;
+  pacientes$: Observable<Paciente[]> | null = null;
 
   constructor(
     private pacienteService: PacientesService,
@@ -50,15 +51,28 @@ export class PacientesComponent {
   }
 
   onDelete(paciente: Paciente) {
-    this.pacienteService.delete(paciente._id).subscribe(() => {
-      this.refresh();
-      this.snackBar.open('Cadastro do Paciente removido com sucesso!', '', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center',
-      });
-    },
-    error => this.onError('Erro ao tentar remover o cadastro!')
-    );
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: 'Deseja realmente remover o paciente?',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.pacienteService.delete(paciente._id).subscribe(
+          () => {
+            this.refresh();
+            this.snackBar.open(
+              'Cadastro do Paciente removido com sucesso!',
+              '',
+              {
+                duration: 3000,
+                verticalPosition: 'top',
+                horizontalPosition: 'center',
+              }
+            );
+          },
+          (error) => this.onError('Erro ao tentar remover o cadastro!')
+        );
+      }
+    });
   }
 }
